@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <div>
       <section className={styles.Hero}>
-        <Image src={HeroPic}/>
+        <Image src={HeroPic} alt="HeroImage"/>
       </section>
 
       <section className={styles.layingHero}>
@@ -33,11 +33,11 @@ const Home = () => {
           <h3>Make a donation that could change the lives of others and you also</h3>
         </div>
         <div>
-          <Image src={handsPic} width={129} height={ 127}/>
+          <Image src={handsPic} width={129} height={ 127} alt="teamwork"/>
           <h3>Make a donation that could change the lives of others and you also</h3>
         </div>
         <div>
-          <Image src={togetherPic} width={166} height={155} />
+          <Image src={togetherPic} width={166} height={155} alt="teamwork"/>
           <h3>Make a donation that could change the lives of others and you also</h3>
         </div>
       </section>
@@ -51,13 +51,13 @@ const Home = () => {
         <div>
           <h3>
           <q>Good works is giving to the poor and the helpless, but divine works is showing them their worth to the One who matters.</q>
-           <br/>Be a reason for the smile of your next neighbour, let's change the world through our giving.
+           <br/>Be a reason for the smile of your next neighbour, lets change the world through our giving.
           </h3>
           <button type="button">Read more</button>
         </div>
         {/* Stats section */}
         <div>
-          <Image src={statsPic} height={250}/>
+          <Image src={statsPic} height={250} alt="statspic"/>
         </div>
 
         <div>
@@ -75,19 +75,19 @@ const Home = () => {
 
       <section className={styles.third}>
         <div>
-          <Image src={vegePic} />
+          <Image src={vegePic} alt="vegetables"/>
           <h4>Raise Food for People</h4>
           <progress value={50} max={100}></progress>
           <button type="button">Donate Now</button>
         </div>
         <div>
-          <Image src={schoolPic} />
+          <Image src={schoolPic} alt="school"/>
           <h4>Education for People</h4>
           <progress value={50} max={100}></progress>
           <button type="button">Donate Now</button>
         </div>
         <div>
-          <Image src={clothePic} />
+          <Image src={clothePic} alt="clothing"/>
           <h4>Clothe People</h4>
           <progress value={50} max={100}></progress>
           <button type="button">Donate Now</button>
@@ -95,7 +95,7 @@ const Home = () => {
       </section>
 
       <div className={styles.chart}>
-        <Image src={chartPic}/>
+        <Image src={chartPic} alt="chart"/>
       </div>
 
       <section className={styles.staff}>
@@ -111,7 +111,7 @@ const Home = () => {
 
       <section className={styles.weDo}>
         <h3>What we do</h3>
-        <h4 className={styles.text2}>Always try to create a <b style={{color:"#FF5E14"}}>"greater spirit"</b> for the needy</h4>
+        <h4 className={styles.text2}>Always try to create a <b style={{color:"#FF5E14"}}>&#34;greater spirit&#34;</b> for the needy</h4>
         <div className={styles.item5}>
             <Image src={bubblePic} height={492} width={646} />
         </div>
