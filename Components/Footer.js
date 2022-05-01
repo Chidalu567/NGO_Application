@@ -6,7 +6,7 @@ export const Footer = () => {
             <div className={styles.emailer}>
                 <h3>Subscribe to Our Newsletter</h3>
                 <div>
-                    <input type="email" placeHolder="Email" id="email" />
+                    <input type="email" placeholder="Email" id="email" />
                     <button type="button">Subscribe</button>
                 </div>
 
