@@ -23,7 +23,7 @@ import { Statistic} from 'antd';
 
 // import UI components
 import { HeroComponent } from '../Components/UIComponents/HeroComponent';
-
+import { FirstSection } from '../Components/UIComponents/FirstSection';
 
 const Home = () => {
   return (
@@ -32,7 +32,10 @@ const Home = () => {
         <meta name="description" content="Sir Philip NON governmental Organization" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </Head>
-      <HeroComponent/>
+
+      <HeroComponent />
+
+      <FirstSection/>
     </div>
   )
  }

@@ -25,8 +25,8 @@ const NavBar = styled.div`
 `;
 
 const NavLogo = styled.div`
-    margin:2px;
-    margin-left:80px;
+    margin-left:50px;
+    margin-top:5px;
 `;
 
 

@@ -21,7 +21,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faDollarSign,faArrowRight} from '@fortawesome/free-solid-svg-icons';
 
 const HeroContainer = styled.div`
-  height: 500px;
+  height:500px;
 `;
 
 const FloatingContainer = styled.div`
@@ -34,10 +34,12 @@ const FloatingContainer = styled.div`
   align-items:center;
   padding:15px;
   @media (max-width:700px){
-    max-width:60%;
+    max-width:70%;
     position:relative;
-    top:-350px;
-    left:100px;
+    top:-400px;
+    margin-left:15%;
+    margin-right:15%;
+    box-shadow:0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
   }
 `;
 
@@ -69,7 +71,7 @@ export const HeroComponent = () => {
       <Carousel autoplay>
 
         <HeroContainer>
-          <Image src={HeroPic} layout="responsive" priority="true" />
+          <Image src={HeroPic} layout="responsive" priority="true"/>
         </HeroContainer>
 
         <HeroContainer>
