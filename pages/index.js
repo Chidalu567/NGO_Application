@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
+import Head from 'next/head';
 
 // pictures
 import handsPic from '../public/images/volunteer 1.png';
@@ -23,9 +24,14 @@ import { Statistic} from 'antd';
 // import UI components
 import { HeroComponent } from '../Components/UIComponents/HeroComponent';
 
+
 const Home = () => {
   return (
     <div>
+      <Head>
+        <meta name="description" content="Sir Philip NON governmental Organization" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      </Head>
       <HeroComponent/>
     </div>
   )

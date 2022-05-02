@@ -58,7 +58,7 @@ const Arrow = styled.div`
   top:40px;
   z-index:1;
   @media (max-width:700px){
-    top: 45px;
+    top: 100px;
     left:5px;
   }
 `;
