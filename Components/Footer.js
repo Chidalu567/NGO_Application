@@ -2,8 +2,8 @@ import styles from '../styles/footer.module.css';
 
 export const Footer = () => {
     return (
-        <footer className={styles.container}>
-            <div className={styles.emailer}>
+        <footer>
+            {/* <div className={styles.emailer}>
                 <h3>Subscribe to Our Newsletter</h3>
                 <div>
                     <input type="email" placeholder="Email" id="email" />
@@ -30,7 +30,7 @@ export const Footer = () => {
                         <li>+234 703 852 2644</li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
         </footer>
     )
 }
