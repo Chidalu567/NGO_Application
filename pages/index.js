@@ -6,7 +6,7 @@ import Head from 'next/head';
 import { HeroComponent } from '../Components/UIComponents/HeroComponent';
 import { FirstSection } from '../Components/UIComponents/FirstSection';
 import { WorkStatistic } from '../Components/UIComponents/WorkStatistic';
-import { Charts } from '../Components/UICOmponents/Charts';
+import { Charts } from '../Components/UIComponents/Charts';
 import { Staffs } from '../Components/UIComponents/Staffs';
 
 const Home = () => {
