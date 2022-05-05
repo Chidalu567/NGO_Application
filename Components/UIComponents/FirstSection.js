@@ -123,14 +123,14 @@ export const FirstSection = () => {
             <Text1>Sir Aguwuncha Philip is a non-governmental organization which <br/><OrangeText>provides help to the needy.</OrangeText></Text1>
 
             <FirstArticle>
-                <Text2><ColorQuote>"</ColorQuote>Good works is giving to the poor and the helpless, but divine works is showing them their worth to the One who matters.<ColorQuote>"</ColorQuote> <br/>
-                    Be a reason for the smile of your next neighbour, lets change the world through our giving.
+                <Text2><ColorQuote>&ldquo;`</ColorQuote>Good works is giving to the poor and the helpless, but divine works is showing them their worth to the One who matters.<ColorQuote>&ldquo;`</ColorQuote> <br/>
+                    <OrangeText>Be a reason for the smile of your next neighbour, lets change the world through our giving.</OrangeText>
                 </Text2>
                 <ReadMore type="button">Read more</ReadMore>
             </FirstArticle>
 
             <SecondArticle>
-                <Image src={FirstSectionImage} layout="responsive" priority="true"/>
+                <Image src={FirstSectionImage} layout="responsive" priority="true" alt=""/>
                 <Statistic>
                     <Stats>Raised : $25000 / $30000</Stats>
                     <Progress type="circle" strokeColor={{ '0%': '#FF5E14', '100%': 'gray' }} percent={50} style={{marginLeft:'30%',marginRight:"40%"}}/>

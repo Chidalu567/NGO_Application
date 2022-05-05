@@ -9,7 +9,7 @@ import Staff1 from '../../public/images/staffs/concilia.png';
 import Staff2 from '../../public/images/staffs/ebuka.png';
 import Staff3 from '../../public/images/staffs/okechukwu.png';
 
-const Container = styled.div`
+ const Container = styled.div`
     margin-top:60px;
 `;
 
@@ -20,15 +20,15 @@ export const Staffs = () => {
         <Container>
             <Carousel autoplay>
                 <StaffContainer>
-                    <Image src={Staff1} layout="responsive" priority="true"/>
+                    <Image src={Staff1} layout="responsive" priority="true" alt=""/>
                 </StaffContainer>
 
                 <StaffContainer>
-                    <Image src={Staff2} layout="responsive" priority="true"/>
+                    <Image src={Staff2} layout="responsive" priority="true" alt=""/>
                 </StaffContainer>
 
                 <StaffContainer>
-                    <Image src={Staff3} layout="responsive" priority="true"/>
+                    <Image src={Staff3} layout="responsive" priority="true" alt=""/>
                 </StaffContainer>
             </Carousel>
         </Container>

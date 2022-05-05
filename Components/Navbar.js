@@ -95,7 +95,7 @@ export const Navbar = () => {
     return (
         <NavBar>
             <NavLogo>
-                <Image src={logoPic} height="90px" width="100px"/>
+                <Image src={logoPic} height="90px" width="100px" alt=""/>
             </NavLogo>
 
             <NavContainer>

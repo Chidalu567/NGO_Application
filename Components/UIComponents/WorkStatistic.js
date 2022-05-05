@@ -59,9 +59,9 @@ export const WorkStatistic = () => {
         <Container>
             <Content>
                 <Carousel autoplay>
-                    <Image src={clothing} priority="true" layout="responsive" height={1600} />
-                    <Image src={school} layout="responsive" priority="true" height={800}/>
-                    <Image src={food} layout="responsive" priority="true"/>
+                    <Image src={clothing} priority="true" layout="responsive" height={1600}  alt=""/>
+                    <Image src={school} layout="responsive" priority="true" height={800} alt=""/>
+                    <Image src={food} layout="responsive" priority="true" alt=""/>
                 </Carousel>
                 <Text>Estimated Break Even</Text>
                 <Progress type="dashboard" percent={88} status="active" size="large" style={{alignSelf:"center",marginBottom:"10px"}}/>

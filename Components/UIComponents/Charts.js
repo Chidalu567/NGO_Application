@@ -12,7 +12,7 @@ const Container = styled.div`
 export const Charts = () => {
     return (
         <Container>
-            <Image src={chart} layout="responsive" priority="true"/>
+            <Image src={chart} layout="responsive" priority="true" alt=""/>
         </Container>
     )
 }

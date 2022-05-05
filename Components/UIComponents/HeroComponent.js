@@ -71,7 +71,7 @@ export const HeroComponent = () => {
       <Carousel autoplay>
 
         <HeroContainer>
-          <Image src={HeroPic} layout="responsive" priority="true"/>
+          <Image src={HeroPic} layout="responsive" priority="true" alt=""/>
         </HeroContainer>
 
         <HeroContainer>
@@ -80,7 +80,7 @@ export const HeroComponent = () => {
             layout="responsive"
             priority="true"
             height={740}
-          />
+           alt=""/>
         </HeroContainer>
 
         <HeroContainer>
@@ -89,7 +89,7 @@ export const HeroComponent = () => {
             layout="responsive"
             priority="true"
             height={195}
-          />
+           alt=""/>
         </HeroContainer>
 
         <HeroContainer>
@@ -98,7 +98,7 @@ export const HeroComponent = () => {
             layout="responsive"
             priority="true"
             height={450}
-          />
+          alt=""/>
         </HeroContainer>
 
         <HeroContainer>
@@ -107,7 +107,7 @@ export const HeroComponent = () => {
             layout="responsive"
             priority="true"
             height={400}
-          />
+          alt=""/>
         </HeroContainer>
 
         <HeroContainer>
@@ -116,7 +116,7 @@ export const HeroComponent = () => {
             layout="responsive"
             priority="true"
             height={450}
-          />
+          alt=""/>
         </HeroContainer>
 
         <HeroContainer>
@@ -125,7 +125,7 @@ export const HeroComponent = () => {
             layout="responsive"
             priority="true"
             height={400}
-          />
+          alt=""/>
         </HeroContainer>
 
         <HeroContainer>
@@ -134,7 +134,7 @@ export const HeroComponent = () => {
             layout="responsive"
             priority="true"
             height={400}
-          />
+          alt=""/>
         </HeroContainer>
 
       </Carousel>
