@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { Carousel } from 'antd';
 
 // images
-import Staff1 from '../../public/images/staffs/concilia.png';
-import Staff2 from '../../public/images/staffs/ebuka.png';
+import Staff1 from '../../public/images/staffs/Concilia.png';
+import Staff2 from '../../public/images/staffs/Ebuka.png';
 import Staff3 from '../../public/images/staffs/okechukwu.png';
 
  const Container = styled.div`
