@@ -8,6 +8,7 @@ import { FirstSection } from '../Components/UIComponents/FirstSection';
 import { WorkStatistic } from '../Components/UIComponents/WorkStatistic';
 import { Charts } from '../Components/UIComponents/Charts';
 import { Staffs } from '../Components/UIComponents/Staffs';
+import { OurAction } from '../Components/UIComponents/Actions';
 
 const Home = () => {
   return (
@@ -25,7 +26,9 @@ const Home = () => {
 
       <Charts />
 
-      <Staffs/>
+      <Staffs />
+
+      <OurAction/>
 
     </div>
   )

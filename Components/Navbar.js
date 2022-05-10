@@ -7,6 +7,8 @@ import { faBagShopping, faBars } from '@fortawesome/free-solid-svg-icons';
 //styled components import
 import styled from 'styled-components';
 
+// Ant design
+import { Drawer } from 'antd';
 
 
 // All styled components section
@@ -92,6 +94,18 @@ const BurgerButton = styled.button`
 
 export const Navbar = () => {
 
+    const [drawerProps, setDrawerProps] = useState({visible:false,placement:'bottom'}); // initilize the state variable and handler
+
+    const handleClick = () => {
+        // state handler call to update the state
+        setDrawerProps({ ...drawerProps, visible: true });
+    }
+
+    const handleCloseDrawer = () => {
+        // state handler call to update the state
+        setDrawerProps({ ...drawerProps, visible: false });
+    }
+
     return (
         <NavBar>
             <NavLogo>
@@ -109,9 +123,15 @@ export const Navbar = () => {
                 <FontAwesomeIcon icon={faBagShopping} style={{ color: 'white',height:"30px"}}/>
                 <DonateButton type="button">Donate</DonateButton>
             </DonateSection>
-            <BurgerButton>
+            <BurgerButton onClick={()=>handleClick()}>
                 <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "40px" }} />
             </BurgerButton>
+            <Drawer visible={drawerProps.visible} onClose={() => handleCloseDrawer()} placement={drawerProps.placement} key={drawerProps.placement} maskClosable={ true} drawerStyle={{backgroundColor:'#262F36',color:'white'}} headerStyle={{backgroundColor:'#FF5E14'}}>
+                <div>Home</div>
+                <div>About</div>
+                <div>Causes</div>
+                <div>Staff</div>
+            </Drawer>
         </NavBar>
     )
 }
