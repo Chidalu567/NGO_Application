@@ -126,6 +126,7 @@ export const Navbar = () => {
             <BurgerButton onClick={()=>handleClick()}>
                 <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "40px" }} />
             </BurgerButton>
+
             <Drawer visible={drawerProps.visible} onClose={() => handleCloseDrawer()} placement={drawerProps.placement} key={drawerProps.placement} maskClosable={ true} drawerStyle={{backgroundColor:'#262F36',color:'white'}} headerStyle={{backgroundColor:'#FF5E14'}}>
                 <div>Home</div>
                 <div>About</div>

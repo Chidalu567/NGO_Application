@@ -16,9 +16,6 @@ import HeroHelped from '../../public/images/HeroFloatImage/helped.jpg';
 // ant design Components
 import { Carousel } from "antd";
 
-//fontawesome icons and components
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faDollarSign,faArrowRight} from '@fortawesome/free-solid-svg-icons';
 
 const HeroContainer = styled.div`
   height:500px;
@@ -60,10 +57,11 @@ const Arrow = styled.div`
   top:40px;
   z-index:1;
   @media (max-width:700px){
-    top: 100px;
+    top:100px;
     left:5px;
   }
 `;
+
 
 export const HeroComponent = () => {
   return (
@@ -79,7 +77,6 @@ export const HeroComponent = () => {
             src={HeroCryingPic}
             layout="responsive"
             priority="true"
-            height={740}
            alt=""/>
         </HeroContainer>
 
@@ -88,7 +85,6 @@ export const HeroComponent = () => {
             src={HeroHelpingPic}
             layout="responsive"
             priority="true"
-            height={195}
            alt=""/>
         </HeroContainer>
 
@@ -97,7 +93,6 @@ export const HeroComponent = () => {
             src={HeroTeam1}
             layout="responsive"
             priority="true"
-            height={450}
           alt=""/>
         </HeroContainer>
 
@@ -106,7 +101,6 @@ export const HeroComponent = () => {
             src={HeroTeam2}
             layout="responsive"
             priority="true"
-            height={400}
           alt=""/>
         </HeroContainer>
 
@@ -115,7 +109,6 @@ export const HeroComponent = () => {
             src={HeroEvent1}
             layout="responsive"
             priority="true"
-            height={450}
           alt=""/>
         </HeroContainer>
 
@@ -124,7 +117,6 @@ export const HeroComponent = () => {
             src={HeroEvent2}
             layout="responsive"
             priority="true"
-            height={400}
           alt=""/>
         </HeroContainer>
 
@@ -133,20 +125,19 @@ export const HeroComponent = () => {
             src={HeroHelped}
             layout="responsive"
             priority="true"
-            height={400}
           alt=""/>
         </HeroContainer>
 
       </Carousel>
 
-      <FloatingContainer>
+      {/* <FloatingContainer>
         <FontAwesomeIcon icon={faDollarSign} style={{ color: 'white', fontSize: '40px'}} />
         <Arrow>
           <FontAwesomeIcon icon={faArrowRight} style={{ color: 'blue', fontSize: "23px", filter: 'drop-shadow(3px 2px 3px rgba(0,0,0,0.5))', fontWeight: "900px" }} />
         </Arrow>
         <Text>Make a donation that could change the lives of others and you</Text>
       </FloatingContainer>
-
+ */}
 
     </div>
   );
