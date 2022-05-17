@@ -4,11 +4,12 @@ import { useState } from 'react';
 // fontawesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping, faBars } from '@fortawesome/free-solid-svg-icons';
+
 //styled components import
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
 
 // Ant design
-import { Drawer } from 'antd';
+import { Drawer, Button} from 'antd';
 
 
 // All styled components section
@@ -24,6 +25,7 @@ const NavBar = styled.div`
     @media screen and  (max-width:700px){
         max-width:700px;
     }
+    box-sizing:border-box;
 `;
 
 const NavLogo = styled.div`
@@ -32,14 +34,12 @@ const NavLogo = styled.div`
 `;
 
 
-const NavContainer = styled.ul.attrs(props => {
-    display:'block';
-})`
-    align-self:center;
+const NavContainer = styled.ul`
     display:flex;
     flex-direction:row;
     justify-content:space-between;
-    @media (max-width:700px){
+    box-sizing:border-box;
+    @media (max-width:1400px ){
         display:none;
     }
 `;
@@ -51,6 +51,7 @@ const NavItems = styled.li`
     font-weight:800px;
     align-self:center;
     margin-left:90px;
+    box-sizing:border-box;
     padding:30px;
     &:hover {
         background-color:rgba(128,128,128,0.25);
@@ -59,7 +60,7 @@ const NavItems = styled.li`
 `;
 
 const DonateSection = styled.section`
-    @media (max-width:700px){
+    @media (max-width:1400px){
         display:none;
     }
 `;
@@ -80,7 +81,7 @@ const DonateButton = styled.button`
 `;
 
 const BurgerButton = styled.button`
-    @media (min-width:700px){
+    @media (min-width:1400px){
         display:none;
     };
     margin-right:40px;
@@ -90,6 +91,34 @@ const BurgerButton = styled.button`
     &:hover{
         box-shadow:3px 2px 4px 0.25px #FF5E14;
     }
+`;
+
+const ButtonAnimation = keyframes`
+10%{
+    color:#FF5E14;
+    background-color:white;
+}
+
+30%{
+    color:white;
+    background-color:#FF5E14;
+}
+
+60%{
+    color:#FF5E14;
+    background-color:white;
+}
+90%{
+    color:white;
+    bcakground-color:#FF5E14;
+}
+`;
+const DrawerDButton = styled(DonateButton)`
+    margin-left:0px;
+    animation-name:${ButtonAnimation};
+    animation-iteration-count:infinite;
+    animation-duration:8s;
+    animation-timing-function:ease-in-out;
 `;
 
 export const Navbar = () => {
@@ -127,11 +156,11 @@ export const Navbar = () => {
                 <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "40px" }} />
             </BurgerButton>
 
-            <Drawer visible={drawerProps.visible} onClose={() => handleCloseDrawer()} placement={drawerProps.placement} key={drawerProps.placement} maskClosable={ true} drawerStyle={{backgroundColor:'#262F36',color:'white'}} headerStyle={{backgroundColor:'#FF5E14'}}>
+            <Drawer visible={drawerProps.visible} onClose={() => handleCloseDrawer()} placement={drawerProps.placement} key={drawerProps.placement} maskClosable={ true} drawerStyle={{backgroundColor:'#262F36',color:'white'}} headerStyle={{backgroundColor:'white',padding:"20px"}} >
                 <div>Home</div>
                 <div>About</div>
-                <div>Causes</div>
                 <div>Staff</div>
+                <DrawerDButton type="button">Donate Now</DrawerDButton>
             </Drawer>
         </NavBar>
     )

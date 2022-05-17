@@ -13,6 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "airtable": "^0.11.3",
+    "animejs": "^3.2.1",
     "antd": "^4.19.5",
     "cypress": "^9.6.0",
     "next": "^12.1.5",

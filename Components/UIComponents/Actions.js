@@ -1,85 +1,154 @@
+import Image from 'next/image';
+
 import styled from 'styled-components';
 
-// Styled Components
-const Container = styled.div``;
+//images
+import mustache from '../../public/images/mustache.png';
+import donateImage from '../../public/images/donateImage.jpg';
+import foodImage from '../../public/images/workstats/food.jpg';
+import eImage from '../../public/images/volunteerImage.jpg';
 
-const Text1 = styled.h3`
+//Ant designs
+import { Card,Timeline } from 'antd';
+const { Meta } = Card;
+
+const Container = styled.div`
+
+`;
+
+const Legend = styled.div`
+    display:flex;
+    flex-direction:row;
+    position:relative;
+    justify-content:center;
+
+`;
+
+const Text = styled.p`
+    position:absolute;
+    z-index:1;
+    top:16px;
     font-family:Inter;
-    color:#FF5E14;
     font-weight:900;
-    font-size:30px;
-    line-height:30px;
-    text-align:center;
+    color:black;
+    font-size:23px;
 `;
 
-const Text2 = styled.h3`
-    font-family:Inter;
-    font-weight:500;
-    text-align:center;
+const ListContainer = styled.section`
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    margin-left:50px;
+    margin-right:50px;
+    box-sizing:border-box;
 `;
 
-const GridContainer = styled.div`
-  box-shadow:0px 3px 0px #b2a98f,0px 14px 10px rgba(0,0,0,0.15),0px 24px 2px rgba(0,0,0,0.1),0px 34px 30px rgba(0,0,0,0.1);
-  border:1px solid transparent;
-@media (max-width:700px){
-    display:grid;
-    width:75%;
-    background-color:white;
+const ListItem = styled.div`
+    margin-top:20px;
+`;
+
+const TimeLineContainer = styled.div`
+    width:450px;
     margin:auto auto;
-    grid-template-columns: auto auto;
-    padding:10px;
-}
+    @media (max-width:740px){
+        width:350px;
+    }
 `;
+const TimelineItem = styled.div``;
 
-const GridItem = styled.div`
-    padding:2px;
-`;
-
-const ItemTopic = styled.p`
-    font-family:Inter;
-    font-weight:bold;
-`;
-const ItemText = styled.p`
-    font-family:Inter;
-    font-weight:400;
-    margin-right:3px;
-    word-wrap:break-word;
-`;
-
-const Quote = styled.span`
-    color:#FF5E14;
-    font-weight:700;
-`;
-
-export const OurAction = () => {
+export const TimeLine = () => {
     return (
         <Container>
+            <Legend>
+                <Text>Our Action</Text>
+                <Image src={mustache} width={"170vw"} height={"120vw"}/>
+            </Legend>
 
-            <Text1>What We Do</Text1>
-            <Text2>Always try to create a <Quote>greater spirit</Quote> for the needy</Text2>
+            <ListContainer>
+                <ListItem>
+                    <Card
+                    hoverable
+                    cover={<Image src={donateImage} layout="responsive" priority="true" />}
+                    style={{ width: 300 }}>
+                        <Meta title="Make a Donation" description="Assit through your donation as this would go a long way in the lives of the needy."/>
+                    </Card>
+                </ListItem>
 
-            <GridContainer>
+                <ListItem>
+                    <Card
+                    hoverable="true"
+                    cover={<Image src={foodImage} layout="responsive" priority="true" />}
+                    style={{width:300}}
+                    >
+                        <Meta title="Food and Supply" description="Assit through food and supplies targeted to feed them. Gadgets, Medicals, Materials are needed by the needy." />
+                    </Card>
+                </ListItem>
 
-                <GridItem>
-                    <ItemTopic>Make a Donation</ItemTopic>
-                    <ItemText>Assit through your donation as this would go a long way in the lives of the needy.</ItemText>
-                </GridItem>
+                <ListItem>
+                    <Card
+                    hoverable="true"
+                    cover={<Image src={eImage} layout="responsive" priority="true" />}
+                    style={{width:300}}>
+                        <Meta title="Empower and Enlighten" description="Enlighten the young
+                            ones how to be independent in life. “Kindness is universal. Sometimes
+                            being kind allows others to see the goodness in humanity through you.
+                            Always be kinder than necessary” -Germany kent"/>
+                    </Card>
+                </ListItem>
+            </ListContainer>
 
-                <GridItem>
-                    <ItemTopic>Food and Supply</ItemTopic>
-                    <ItemText>Assit through food and supplies targeted to feed them. Gadgets, Medicals, Materials are needed by the needy.</ItemText>
-                </GridItem>
+            <Legend>
+                <Text>Gallery</Text>
+                <Image src={mustache} width={"110vw"} height={"90vw"}/>
+            </Legend>
 
-                <GridItem>
-                    <ItemTopic>Our Presence</ItemTopic>
-                    <ItemText>Be there for those who actively needs you. “Whereever there is a humanbeing there is an opportunity”- Lucius seneca</ItemText>
-                </GridItem>
+            <TimeLineContainer>
+                <Timeline mode="alternate">
 
-                <GridItem>
-                    <ItemTopic>Empowerment</ItemTopic>
-                    <ItemText>Enlighten the young ones how to be independent in life. “Kindness is universal. Sometimes being kind allows others to see the goodness in humanity through you. Always be kinder than necessary” -Germany kent</ItemText>
-                </GridItem>
-            </GridContainer>
+                    <Timeline.Item>
+                        <TimelineItem>
+                            <Card hoverable cover={<Image src={donateImage} priority="true" layout="responsive" />} style={{width:150}}>
+                                <Meta title="For Real" description="Joking around" />
+                            </Card>
+                        </TimelineItem>
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                        <TimelineItem>
+                            <Card hoverable cover={<Image src={donateImage} priority="true" layout="responsive" />} style={{width:150}}>
+                                <Meta title="For Real" description="Joking around" />
+                            </Card>
+                        </TimelineItem>
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                        <TimelineItem>
+                            <Card hoverable cover={<Image src={donateImage} priority="true" layout="responsive" />} style={{width:150}}>
+                                <Meta title="For Real" description="Joking around" />
+                            </Card>
+                        </TimelineItem>
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                        <TimelineItem>
+                            <Card hoverable cover={<Image src={donateImage} priority="true" layout="responsive" />} style={{width:150}}>
+                                <Meta title="For Real" description="Joking around" />
+                            </Card>
+                        </TimelineItem>
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                        <TimelineItem>
+                            <Card hoverable cover={<Image src={donateImage} priority="true" layout="responsive" />} style={{width:200}}>
+                                <Meta title="For Real" description="Joking around" />
+                            </Card>
+                        </TimelineItem>
+                    </Timeline.Item>
+
+
+                </Timeline>
+            </TimeLineContainer>
         </Container>
     )
 }

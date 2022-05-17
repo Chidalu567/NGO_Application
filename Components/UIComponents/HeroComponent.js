@@ -1,144 +1,110 @@
 import Image from "next/image";
-import styled from "styled-components";
 
+//styled components import
+import styled, { keyframes} from "styled-components";
 
 // Pictures
 import HeroPic from "../../public/images/heroImages/heroImage.jpg";
-import HeroCryingPic from "../../public/images/heroImages/childCrying.jpg";
-import HeroHelpingPic from "../../public/images/heroImages/helpingPoor.jpg";
-import HeroTeam1 from '../../public/images/HeroFloatImage/team.jpg';
-import HeroTeam2 from '../../public/images/HeroFloatImage/team2.jpg';
-import HeroEvent1 from '../../public/images/HeroFloatImage/event1.jpg';
-import HeroEvent2 from '../../public/images/HeroFloatImage/event2.jpg';
-import HeroHelped from '../../public/images/HeroFloatImage/helped.jpg';
-
-
-// ant design Components
-import { Carousel } from "antd";
-
-
-const HeroContainer = styled.div`
-  height:500px;
-`;
-
-const FloatingContainer = styled.div`
-  background-color:#FF5E14;
-  max-width:100%;
-  max-height:350px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  padding:15px;
-  @media (max-width:700px){
-    max-width:70%;
-    position:relative;
-    top:-400px;
-    margin-left:15%;
-    margin-right:15%;
-    box-shadow:0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
-  }
-`;
-
-const Text = styled.p`
-  color:white;
-  font-family:'Inter';
-  font-size:25px;
-  font-weight:900px;
-  text-shadow:3px 2px 3px rgba(0,0,0,0.25);
-  word-wrap:break-word;
-  text-align:center;
-`;
-
-const Arrow = styled.div`
-  position:relative;
-  align-self:end;
-  right:100px;
-  top:40px;
-  z-index:1;
-  @media (max-width:700px){
-    top:100px;
-    left:5px;
-  }
-`;
 
 
 export const HeroComponent = () => {
   return (
-    <div>
-      <Carousel autoplay>
-
-        <HeroContainer>
-          <Image src={HeroPic} layout="responsive" priority="true" alt=""/>
-        </HeroContainer>
-
-        <HeroContainer>
-          <Image
-            src={HeroCryingPic}
-            layout="responsive"
-            priority="true"
-           alt=""/>
-        </HeroContainer>
-
-        <HeroContainer>
-          <Image
-            src={HeroHelpingPic}
-            layout="responsive"
-            priority="true"
-           alt=""/>
-        </HeroContainer>
-
-        <HeroContainer>
-          <Image
-            src={HeroTeam1}
-            layout="responsive"
-            priority="true"
-          alt=""/>
-        </HeroContainer>
-
-        <HeroContainer>
-          <Image
-            src={HeroTeam2}
-            layout="responsive"
-            priority="true"
-          alt=""/>
-        </HeroContainer>
-
-        <HeroContainer>
-          <Image
-            src={HeroEvent1}
-            layout="responsive"
-            priority="true"
-          alt=""/>
-        </HeroContainer>
-
-        <HeroContainer>
-          <Image
-            src={HeroEvent2}
-            layout="responsive"
-            priority="true"
-          alt=""/>
-        </HeroContainer>
-
-        <HeroContainer>
-          <Image
-            src={HeroHelped}
-            layout="responsive"
-            priority="true"
-          alt=""/>
-        </HeroContainer>
-
-      </Carousel>
-
-      {/* <FloatingContainer>
-        <FontAwesomeIcon icon={faDollarSign} style={{ color: 'white', fontSize: '40px'}} />
-        <Arrow>
-          <FontAwesomeIcon icon={faArrowRight} style={{ color: 'blue', fontSize: "23px", filter: 'drop-shadow(3px 2px 3px rgba(0,0,0,0.5))', fontWeight: "900px" }} />
-        </Arrow>
-        <Text>Make a donation that could change the lives of others and you</Text>
-      </FloatingContainer>
- */}
-
-    </div>
+    <HeroContainer>
+      <Text>Help the <Orange>Needy</Orange> through your <Orange>Donations</Orange></Text>
+      <Text2><Black>Donate</Black> <White>Smartly</White> </Text2>
+      <Image src={HeroPic} priority="true" layout="responsive" />
+    </HeroContainer>
   );
 };
+
+
+// Ui Component Styles
+const HeroContainer = styled.div`
+  position:relative;
+`;
+
+// Moving text animations
+const movingText = keyframes`
+20%{
+  color:#ff7e00;
+}
+60%{
+  color:red;
+}
+100%{
+  color:#FF5E14;
+}
+`;
+
+const Text = styled.p`
+position:absolute;
+font-size:5.5vw;
+font-family:Oswald;
+color:white;
+z-index:1;
+top:50px;
+filter:drop-shadow(0px 2px 3px #9a9a99);
+width:50vw;
+margin-left:20px;
+`;
+
+const Orange = styled.b`
+  color:#edac8e;
+  animation-name:${movingText};
+  animation-duration:9s;
+  animation-iteration-count:infinite;
+  animation-timing-function:ease;
+`;
+
+const Text2 = styled(Text)`
+  font-size:4vw;
+  font-weight:1000;
+  position:absolute;
+  left:38vw;
+  top:100px;
+  z-index:-1.9;
+  text-align:center;
+`;
+
+const invertTwo = keyframes`
+10%{
+  color:black;
+}
+30%{
+  color:white;
+}
+60%{
+  color:black;
+}
+90%{
+  color:white;
+}
+
+`;
+const invertOne = keyframes`
+10%{
+  color:white;
+}
+30%{
+  color:black;
+}
+60%{
+  color:white;
+}
+90%{
+  color:black;
+}
+`;
+
+const White = styled.b`
+  animation-name:${invertOne};
+  animation-duration:8s;
+  animation-iteration-count:infinite;
+  color:black;
+`;
+const Black = styled.b`
+  animation-name:${invertTwo};
+  animation-duration:8s;
+  animation-iteration-count:infinite;
+  color:white;
+`;

@@ -6,16 +6,42 @@ import FirstSectionImage from '../../public/images/childSmiling.jpg'
 import { Progress } from 'antd';
 
 
+
+export const FirstSection = () => {
+    return (
+        <Section1>
+            <Text1>Sir Aguwuncha Philip is a non-governmental organization which <br/><OrangeText>provides help to the needy.</OrangeText></Text1>
+
+            <FirstArticle>
+                <Text2><ColorQuote>&ldquo;`</ColorQuote>Good works is giving to the poor and the helpless, but divine works
+                    showing them their worth to the One who matters.<ColorQuote>&ldquo;`</ColorQuote> <br />
+                    <OrangeText>Be a reason for the smile of your next neighbour, lets change the world through our giving.</OrangeText>
+                </Text2>
+                <ReadMore type="button">Read more</ReadMore>
+            </FirstArticle>
+
+            <SecondArticle>
+                <Image src={FirstSectionImage} layout="responsive" priority="true" alt=""/>
+                <Statistic>
+                    <Stats>Raised : $25000 / $30000</Stats>
+                    <Progress type="circle" strokeColor={{ '0%': '#FF5E14', '100%': 'gray' }} percent={50} style={{marginLeft:"30%"}}/>
+                    <DonateButton type="button">Donate Now</DonateButton>
+                </Statistic>
+
+            </SecondArticle>
+
+        </Section1>
+    )
+}
+
+
+// UI Components Styles
 const Section1 = styled.section`
     background-color:#C4C4C4;
     display:grid;
-    grid-template-columns:auto auto;
+    grid-template-columns:50vw;
     grid-template-rows:auto auto;
     row-gap:20px;
-    @media (max-width:700px){
-        position:relative;
-        top:-300px;
-    }
 `;
 
 const Text1 = styled.p`
@@ -26,6 +52,7 @@ const Text1 = styled.p`
     text-align:center;
     margin-top:20px;
     font-size:30px;
+    margin-top:30px;
     filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.25));
     @media (max-width:700px){
         font-size:25px;
@@ -47,6 +74,9 @@ const OrangeText = styled.b`
 
 const FirstArticle = styled.article`
     background-color:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
     @media (max-width:700px){
         grid-column:1/3;
         margin-left:44px;
@@ -73,7 +103,7 @@ const ReadMore = styled.button`
     margin-right:10%;
     margin-bottom:30px;
     border:1px solid transparent;
-    box-shadow:0px 3px 0px #b2a98f,0px 14px 10px rgba(0,0,0,0.15),0px 24px 2px rgba(0,0,0,0.1),0px 34px 30px rgba(0,0,0,0.1);
+    box-shadow:0px 14px 10px rgba(0,0,0,0.15),0px 24px 2px rgba(0,0,0,0.1),0px 34px 30px rgba(0,0,0,0.1);
 `;
 
 const Stats = styled.p`
@@ -99,7 +129,7 @@ const DonateButton = styled.button`
     border:1px solid transparent;
     margin-bottom:30px;
     margin-top:20px;
-    box-shadow:0px 3px 0px #b2a98f,0px 14px 10px rgba(0,0,0,0.15),0px 24px 2px rgba(0,0,0,0.1),0px 34px 30px rgba(0,0,0,0.1);
+    box-shadow:0px 14px 10px rgba(0,0,0,0.15),0px 24px 2px rgba(0,0,0,0.1),0px 34px 30px rgba(0,0,0,0.1);
 `;
 
 const ColorQuote = styled.b`
@@ -116,29 +146,3 @@ const Statistic = styled.div`
     height:300px;
     box-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
 `;
-
-export const FirstSection = () => {
-    return (
-        <Section1>
-            <Text1>Sir Aguwuncha Philip is a non-governmental organization which <br/><OrangeText>provides help to the needy.</OrangeText></Text1>
-
-            <FirstArticle>
-                <Text2><ColorQuote>&ldquo;`</ColorQuote>Good works is giving to the poor and the helpless, but divine works is showing them their worth to the One who matters.<ColorQuote>&ldquo;`</ColorQuote> <br/>
-                    <OrangeText>Be a reason for the smile of your next neighbour, lets change the world through our giving.</OrangeText>
-                </Text2>
-                <ReadMore type="button">Read more</ReadMore>
-            </FirstArticle>
-
-            <SecondArticle>
-                <Image src={FirstSectionImage} layout="responsive" priority="true" alt=""/>
-                <Statistic>
-                    <Stats>Raised : $25000 / $30000</Stats>
-                    <Progress type="circle" strokeColor={{ '0%': '#FF5E14', '100%': 'gray' }} percent={50} style={{marginLeft:'30%',marginRight:"40%"}}/>
-                    <DonateButton type="button">Donate Now</DonateButton>
-                </Statistic>
-
-            </SecondArticle>
-
-        </Section1>
-    )
-}
