@@ -27,7 +27,6 @@ export const FirstSection = () => {
                     <Progress type="circle" strokeColor={{ '0%': '#FF5E14', '100%': 'gray' }} percent={50} style={{marginLeft:"30%"}}/>
                     <DonateButton type="button">Donate Now</DonateButton>
                 </Statistic>
-
             </SecondArticle>
 
         </Section1>
@@ -85,6 +84,7 @@ const FirstArticle = styled.article`
 `;
 
 const SecondArticle = styled.article`
+    position:relative;
     @media (max-width:700px){
         grid-column:1/3;
     }

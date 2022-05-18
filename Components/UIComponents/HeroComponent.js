@@ -42,7 +42,7 @@ font-size:5.5vw;
 font-family:Oswald;
 color:white;
 z-index:1;
-top:50px;
+top:20px;
 filter:drop-shadow(0px 2px 3px #9a9a99);
 width:50vw;
 margin-left:20px;

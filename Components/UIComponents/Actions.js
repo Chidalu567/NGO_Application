@@ -31,6 +31,7 @@ const Legend = styled.div`
     position:relative;
     justify-content:center;
     margin-top:40px;
+    margin-bottom:40px;
 `;
 
 const Text = styled.p`
@@ -128,7 +129,7 @@ export const TimeLine = () => {
                     <Timeline.Item>
                         <TimelineItem>
                             <Card hoverable cover={<Image src={image1} priority="true" layout="responsive" />} style={{width:250}}>
-                                <Meta title="For Real" description="Joking around" />
+                                <Meta title="Helping the Elderly" description="Assiting the elderly is an important role in humanity. Sir Aguwuncha Philip Organization aims to fufil this role" />
                             </Card>
                         </TimelineItem>
                     </Timeline.Item>
@@ -136,47 +137,48 @@ export const TimeLine = () => {
                     <Timeline.Item>
                         <TimelineItem>
                             <Card hoverable cover={<Image src={image2} priority="true" layout="responsive" />} style={{width:250}}>
-                                <Meta title="For Real" description="Joking around" />
+                                <Meta title="Our Misson" description="To restore hope to the less privileged around the nation by combating poverty through quality education, healthcare and skills which enable them actualize their potentials in their life's growth." />
                             </Card>
                         </TimelineItem>
                     </Timeline.Item>
 
-                    <Timeline.Item>
+                    {/* <Timeline.Item>
                         <TimelineItem>
                             <Card hoverable cover={<Image src={image3} priority="true" layout="responsive" />} style={{width:250}}>
                                 <Meta title="For Real" description="Joking around" />
                             </Card>
                         </TimelineItem>
-                    </Timeline.Item>
+                    </Timeline.Item> */}
 
-                    <Timeline.Item>
+                    {/* <Timeline.Item>
                         <TimelineItem>
                             <Card hoverable cover={<Image src={image4} priority="true" layout="responsive" />} style={{width:250}}>
                                 <Meta title="For Real" description="Joking around" />
                             </Card>
                         </TimelineItem>
-                    </Timeline.Item>
+                    </Timeline.Item> */}
 
                     <Timeline.Item>
                         <TimelineItem>
                             <Card hoverable cover={<Image src={image5} priority="true" layout="responsive" />} style={{width:250}}>
-                                <Meta title="For Real" description="Joking around" />
+                                <Meta title="Provisions" description="Why are we NGO if we can't assist financially. Sir Aguwuncha Philip Organization aids provision to the less privileged.
+                                Equally living is important in humanity" />
                             </Card>
                         </TimelineItem>
                     </Timeline.Item>
 
-                    <Timeline.Item>
+                    {/* <Timeline.Item>
                         <TimelineItem>
                             <Card hoverable cover={<Image src={image6} priority="true" layout="responsive" />} style={{width:250}}>
                                 <Meta title="For Real" description="Joking around" />
                             </Card>
                         </TimelineItem>
-                    </Timeline.Item>
+                    </Timeline.Item> */}
 
                     <Timeline.Item>
                         <TimelineItem>
                             <Card hoverable cover={<Image src={image7} priority="true" layout="responsive" />} style={{width:250}}>
-                                <Meta title="For Real" description="Joking around" />
+                                <Meta title="Second Visitation" description="NGO visitation to Orphange home. Providing the needs for occupants." />
                             </Card>
                         </TimelineItem>
                     </Timeline.Item>
@@ -184,7 +186,7 @@ export const TimeLine = () => {
                     <Timeline.Item>
                         <TimelineItem>
                             <Card hoverable cover={<Image src={image8} priority="true" layout="responsive" />} style={{width:250}}>
-                                <Meta title="For Real" description="Joking around" />
+                                <Meta title="Our Vision" description="To see our society afford every man, woman and Children the opportunities to live a fulfilled life." />
                             </Card>
                         </TimelineItem>
                     </Timeline.Item>
@@ -192,7 +194,7 @@ export const TimeLine = () => {
                     <Timeline.Item>
                         <TimelineItem>
                             <Card hoverable cover={<Image src={image9} priority="true" layout="responsive" />} style={{width:250}}>
-                                <Meta title="For Real" description="Joking around" />
+                                <Meta title="Looking Forward" description="Sir Aguwuncha Philip Organization is aimed at helping people both locally and Internationally." />
                             </Card>
                         </TimelineItem>
                     </Timeline.Item>
