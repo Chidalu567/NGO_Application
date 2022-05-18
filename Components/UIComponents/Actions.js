@@ -7,6 +7,15 @@ import mustache from '../../public/images/mustache.png';
 import donateImage from '../../public/images/donateImage.jpg';
 import foodImage from '../../public/images/workstats/food.jpg';
 import eImage from '../../public/images/volunteerImage.jpg';
+import image1 from '../../public/images/one.jpeg';
+import image2 from '../../public/images/two.jpeg';
+import image3 from '../../public/images/three.jpeg';
+import image4 from '../../public/images/four.jpeg';
+import image5 from '../../public/images/five.jpeg';
+import image6 from '../../public/images/seven.jpeg';
+import image7 from '../../public/images/eight.jpeg';
+import image8 from '../../public/images/nine.jpeg';
+import image9 from '../../public/images/ten.jpeg';
 
 //Ant designs
 import { Card,Timeline } from 'antd';
@@ -21,7 +30,7 @@ const Legend = styled.div`
     flex-direction:row;
     position:relative;
     justify-content:center;
-
+    margin-top:40px;
 `;
 
 const Text = styled.p`
@@ -49,13 +58,15 @@ const ListItem = styled.div`
 `;
 
 const TimeLineContainer = styled.div`
-    width:450px;
-    margin:auto auto;
+    width:150px;
     @media (max-width:740px){
         width:350px;
     }
+    margin:auto auto;
 `;
-const TimelineItem = styled.div``;
+const TimelineItem = styled.div`
+    margin-left:30px;
+`;
 
 export const TimeLine = () => {
     return (
@@ -104,11 +115,19 @@ export const TimeLine = () => {
             </Legend>
 
             <TimeLineContainer>
-                <Timeline mode="alternate">
+                <Timeline mode="left">
 
                     <Timeline.Item>
                         <TimelineItem>
-                            <Card hoverable cover={<Image src={donateImage} priority="true" layout="responsive" />} style={{width:150}}>
+                            <Card hoverable cover={<Image src={image6} priority="true" layout="responsive" />} style={{width:250}}>
+                                <Meta title="Team Visitation" description="Our NGO visited an orphanage home, providing the care and comfort they need." />
+                            </Card>
+                        </TimelineItem>
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                        <TimelineItem>
+                            <Card hoverable cover={<Image src={image1} priority="true" layout="responsive" />} style={{width:250}}>
                                 <Meta title="For Real" description="Joking around" />
                             </Card>
                         </TimelineItem>
@@ -116,7 +135,7 @@ export const TimeLine = () => {
 
                     <Timeline.Item>
                         <TimelineItem>
-                            <Card hoverable cover={<Image src={donateImage} priority="true" layout="responsive" />} style={{width:150}}>
+                            <Card hoverable cover={<Image src={image2} priority="true" layout="responsive" />} style={{width:250}}>
                                 <Meta title="For Real" description="Joking around" />
                             </Card>
                         </TimelineItem>
@@ -124,7 +143,7 @@ export const TimeLine = () => {
 
                     <Timeline.Item>
                         <TimelineItem>
-                            <Card hoverable cover={<Image src={donateImage} priority="true" layout="responsive" />} style={{width:150}}>
+                            <Card hoverable cover={<Image src={image3} priority="true" layout="responsive" />} style={{width:250}}>
                                 <Meta title="For Real" description="Joking around" />
                             </Card>
                         </TimelineItem>
@@ -132,7 +151,7 @@ export const TimeLine = () => {
 
                     <Timeline.Item>
                         <TimelineItem>
-                            <Card hoverable cover={<Image src={donateImage} priority="true" layout="responsive" />} style={{width:150}}>
+                            <Card hoverable cover={<Image src={image4} priority="true" layout="responsive" />} style={{width:250}}>
                                 <Meta title="For Real" description="Joking around" />
                             </Card>
                         </TimelineItem>
@@ -140,7 +159,39 @@ export const TimeLine = () => {
 
                     <Timeline.Item>
                         <TimelineItem>
-                            <Card hoverable cover={<Image src={donateImage} priority="true" layout="responsive" />} style={{width:200}}>
+                            <Card hoverable cover={<Image src={image5} priority="true" layout="responsive" />} style={{width:250}}>
+                                <Meta title="For Real" description="Joking around" />
+                            </Card>
+                        </TimelineItem>
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                        <TimelineItem>
+                            <Card hoverable cover={<Image src={image6} priority="true" layout="responsive" />} style={{width:250}}>
+                                <Meta title="For Real" description="Joking around" />
+                            </Card>
+                        </TimelineItem>
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                        <TimelineItem>
+                            <Card hoverable cover={<Image src={image7} priority="true" layout="responsive" />} style={{width:250}}>
+                                <Meta title="For Real" description="Joking around" />
+                            </Card>
+                        </TimelineItem>
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                        <TimelineItem>
+                            <Card hoverable cover={<Image src={image8} priority="true" layout="responsive" />} style={{width:250}}>
+                                <Meta title="For Real" description="Joking around" />
+                            </Card>
+                        </TimelineItem>
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                        <TimelineItem>
+                            <Card hoverable cover={<Image src={image9} priority="true" layout="responsive" />} style={{width:250}}>
                                 <Meta title="For Real" description="Joking around" />
                             </Card>
                         </TimelineItem>
