@@ -44,14 +44,16 @@ const Text = styled.p`
     font-size:23px;
 `;
 
-const ListContainer = styled.section`
+const ListContainer = styled.div`
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
     justify-content:space-between;
     margin-left:50px;
     margin-right:50px;
-    box-sizing:border-box;
+    @media(max-width:740px){
+        justify-content:center;
+    }
 `;
 
 const ListItem = styled.div`
