@@ -6,7 +6,7 @@ import styled from 'styled-components';
 //images
 import mustache from '../../public/images/mustache.png';
 import donateImage from '../../public/images/donateImage.jpg';
-import foodImage from '../../public/images/workstats/food.jpg';
+import concilia from '../../public/images/staffs/Concilia.png';
 
 // swiper
 import { Swiper,SwiperSlide} from 'swiper/react';
@@ -20,7 +20,6 @@ import 'swiper/css/effect-cards';
 const Container = styled.div`
 
 `;
-
 const Title = styled.h4`
     text-align:center;
     color:black;
@@ -77,9 +76,9 @@ export const Staffs = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <Image src={donateImage} priority={true} />
+                    <Image src={concilia} priority={true} />
                     <Title>Staff Administrator</Title>
-                    <Description>Concilia Philip is the staff administrator of sir philip aguwncha ngo organization.</Description>
+                    <Description>Concilia Okechukwu is the staff administrator of sir philip aguwncha ngo organization.</Description>
                 </SwiperSlide>
 
                 <SwiperSlide>
