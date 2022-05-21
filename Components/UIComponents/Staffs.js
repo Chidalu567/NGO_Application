@@ -29,15 +29,39 @@ const Title = styled.h4`
 `;
 const Description = styled.p`
     text-align:center;
-    font-size:20px;
+    font-size:15px;
     font-family:Inter;
     color:rgba(0,0,0,0.9);
     padding:10px;
 `;
 
+
+const Legend = styled.div`
+    display:flex;
+    flex-direction:row;
+    position:relative;
+    justify-content:center;
+    margin-top:40px;
+    margin-bottom:40px;
+`;
+
+const Text = styled.p`
+    position:absolute;
+    z-index:1;
+    top:16px;
+    font-family:Inter;
+    font-weight:900;
+    color:black;
+    font-size:23px;
+`;
+
 export const Staffs = () => {
     return (
         <Container>
+            <Legend>
+                <Text>Staffs</Text>
+                <Image src={mustache} width={"170vw"} height={"120vw"}/>
+            </Legend>
             <Swiper
                 effect={"cards"}
                 grabCursor={true}
@@ -49,19 +73,19 @@ export const Staffs = () => {
                 <SwiperSlide>
                     <Image src={donateImage} priority={true} />
                     <Title>CEO</Title>
-                    <Description>Mr Philip Aguwuncha is the Chief Executive officer of Sir Philip NGO Organization.</Description>
+                    <Description>Mr Philip Aguwuncha is the chief executive officer of sir philip ngo organization.</Description>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <Image src={donateImage} priority={true} />
                     <Title>Staff Administrator</Title>
-                    <Description>Concilia Philip is the Staff Administrator of Sir Philip Aguwncha NGO organization.</Description>
+                    <Description>Concilia Philip is the staff administrator of sir philip aguwncha ngo organization.</Description>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <Image src={donateImage} priority={true} />
                     <Title>Event Staff</Title>
-                    <Description>Ebuka Okoye is the Event Staff Lead of Sir Philip NGO Organization.</Description>
+                    <Description>Ebuka Okoye is the event staff lead of sir philip ngo organization.</Description>
                 </SwiperSlide>
             </Swiper>
         </Container>
