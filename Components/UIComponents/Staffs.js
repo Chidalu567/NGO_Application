@@ -1,36 +1,69 @@
-import styled from 'styled-components';
 import Image from 'next/image';
 
-//ant design components
-import { Carousel } from 'antd';
+//For Styled components
+import styled from 'styled-components';
 
-// images
-import Staff1 from '../../public/images/staffs/Concilia.png';
-import Staff2 from '../../public/images/staffs/Ebuka.png';
-import Staff3 from '../../public/images/staffs/okechukwu.png';
+//images
+import mustache from '../../public/images/mustache.png';
+import donateImage from '../../public/images/donateImage.jpg';
+import foodImage from '../../public/images/workstats/food.jpg';
 
- const Container = styled.div`
-    margin-top:60px;
+// swiper
+import { Swiper,SwiperSlide} from 'swiper/react';
+import { EffectCards } from 'swiper'; // swiper modules
+//swiper Styles
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+
+
+//UI components
+const Container = styled.div`
+
 `;
 
-const StaffContainer = styled.div``;
+const Title = styled.h4`
+    text-align:center;
+    color:black;
+    font-family:'Inter';
+    font-weight:800;
+`;
+const Description = styled.p`
+    text-align:center;
+    font-size:20px;
+    font-family:Inter;
+    color:rgba(0,0,0,0.9);
+    padding:10px;
+`;
 
 export const Staffs = () => {
     return (
         <Container>
-            <Carousel autoplay>
-                <StaffContainer>
-                    <Image src={Staff1} layout="responsive" priority="true" alt=""/>
-                </StaffContainer>
+            <Swiper
+                effect={"cards"}
+                grabCursor={true}
+                pagination={true}
+                modules={[EffectCards]}
+                className="allStaffs"
+            >
 
-                <StaffContainer>
-                    <Image src={Staff2} layout="responsive" priority="true" alt=""/>
-                </StaffContainer>
+                <SwiperSlide>
+                    <Image src={donateImage} priority={true} />
+                    <Title>CEO</Title>
+                    <Description>Mr Philip Aguwuncha is the Chief Executive officer of Sir Philip NGO Organization.</Description>
+                </SwiperSlide>
 
-                <StaffContainer>
-                    <Image src={Staff3} layout="responsive" priority="true" alt=""/>
-                </StaffContainer>
-            </Carousel>
+                <SwiperSlide>
+                    <Image src={donateImage} priority={true} />
+                    <Title>Staff Administrator</Title>
+                    <Description>Concilia Philip is the Staff Administrator of Sir Philip Aguwncha NGO organization.</Description>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <Image src={donateImage} priority={true} />
+                    <Title>Event Staff</Title>
+                    <Description>Ebuka Okoye is the Event Staff Lead of Sir Philip NGO Organization.</Description>
+                </SwiperSlide>
+            </Swiper>
         </Container>
     )
 }

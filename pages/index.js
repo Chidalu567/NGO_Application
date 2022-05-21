@@ -22,13 +22,15 @@ const Home = () => {
 
       <FirstSection />
 
-      <TimeLine/>
+      <TimeLine />
+
+      <Staffs />
 
       {/* <WorkStatistic />
 
       <Charts />
 
-      <Staffs />
+
 
        */}
 
