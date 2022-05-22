@@ -8,6 +8,8 @@
     display: flex;
     flex-direction:column;
     border-radius: 18px;
+    padding-left:3px;
+    padding-right:3px;
   }
 
   .swiper-slide:nth-child(1n) {

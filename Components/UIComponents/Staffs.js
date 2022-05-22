@@ -5,8 +5,9 @@ import styled from 'styled-components';
 
 //images
 import mustache from '../../public/images/mustache.png';
-import donateImage from '../../public/images/donateImage.jpg';
-import concilia from '../../public/images/staffs/Concilia.png';
+import okechukwuImage from '../../public/images/staffs/okechukwu.png';
+import conciliaImage from '../../public/images/staffs/Concilia.png';
+import ebukaImage from '../../public/images/staffs/Ebuka.png';
 
 // swiper
 import { Swiper,SwiperSlide} from 'swiper/react';
@@ -70,19 +71,19 @@ export const Staffs = () => {
             >
 
                 <SwiperSlide>
-                    <Image src={donateImage} priority={true} />
+                    <Image src={okechukwuImage} priority={true} />
                     <Title>CEO</Title>
                     <Description>Mr Philip Aguwuncha is the chief executive officer of sir philip ngo organization.</Description>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <Image src={concilia} priority={true} />
+                    <Image src={conciliaImage} priority={true} />
                     <Title>Staff Administrator</Title>
                     <Description>Concilia Okechukwu is the staff administrator of sir philip aguwncha ngo organization.</Description>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <Image src={donateImage} priority={true} />
+                    <Image src={ebukaImage} priority={true} />
                     <Title>Event Staff</Title>
                     <Description>Ebuka Okoye is the event staff lead of sir philip ngo organization.</Description>
                 </SwiperSlide>
