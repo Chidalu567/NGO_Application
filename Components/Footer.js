@@ -1,15 +1,68 @@
 import styled from 'styled-components';
+import { useState, useReducer } from 'react';
+import axios from 'axios';
 
 
 export const Footer = () => {
+
+    //     //handle request to the backend
+    // const subscribe = async (param) => {
+    //     const result = await axios({ method: "POST", url: "http://localhost:5000/api/newsletter" });
+    //     return result;
+    // }
+
+        // initialState of the reducer
+    const initialState = {
+        successMsg: '',
+        errorMsg: '',
+    };
+
+        // Reducer main function to handle dispatch actions and update state
+    const main = async (state, action) => {
+        switch (action.type) {
+                // handle if subscribe is found in action.type
+            case 'subscribe':
+                const response = await axios({ method: "POST", url: "https://ngo-application.herokuapp.com/api/newsletter",data:action.payload
+});
+
+                // return the default state
+            default:
+                return state;
+        }
+             };
+
+        //state for person email address
+    const [email, setEmail] = useState({ email: '' }); // state definition
+
+        // handle the action of suscribe and contain backend response
+    const [state, dispatch] = useReducer(main, initialState);
+
+
+        //handleChange input value
+    const handleChange = (e) => {
+        const emailAddress = e.target.name;
+        const value = e.target.value;
+        if (value)  setEmail({[emailAddress]:value});
+    }
+
+        //handleSubmit action
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (email) {
+            // dispatch an action to the reducer function
+            dispatch({ type: 'subscribe', payload: email });
+            setEmail({});// clear the state value of the email
+        }
+    }
+
     return (
         <Container>
 
             <Section1>
                 <Header>Subscribe to Our Newsletter</Header>
                 <FormArea>
-                    <SubscribeInput type="text" />
-                    <Button type="button">Subscibe</Button>
+                    <SubscribeInput type="email" onChange={handleChange} name="email"/>
+                    <Button type="button" onClick={() => handleSubmit()}>Subscibe</Button>
                 </FormArea>
             </Section1>
 
@@ -71,7 +124,7 @@ const Header = styled.h4`
     padding-bottom:2px !important;
 `;
 
-const FormArea = styled.div`
+const FormArea = styled.form`
     margin-top:20px;
     margin-right:40px;
     @media(max-width:700px){
