@@ -22,9 +22,10 @@ export const Footer = () => {
         switch (action.type) {
                 // handle if subscribe is found in action.type
             case 'subscribe':
-                const response = await axios({ method: "POST", url: "https://ngo-application.herokuapp.com/api/newsletter",data:action.payload
-});
-
+                const response = await axios({
+                    method: "POST", url: "https://ngo-application.herokuapp.com/api/newsletter", data: action.payload
+                });
+                console.log(response);
                 // return the default state
             default:
                 return state;
@@ -46,8 +47,7 @@ export const Footer = () => {
     }
 
         //handleSubmit action
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         if (email) {
             // dispatch an action to the reducer function
             dispatch({ type: 'subscribe', payload: email });
