@@ -5,39 +5,8 @@ import axios from 'axios';
 
 export const Footer = () => {
 
-    //     //handle request to the backend
-    // const subscribe = async (param) => {
-    //     const result = await axios({ method: "POST", url: "http://localhost:5000/api/newsletter" });
-    //     return result;
-    // }
-
-        // initialState of the reducer
-    const initialState = {
-        successMsg: '',
-        errorMsg: '',
-    };
-
-        // Reducer main function to handle dispatch actions and update state
-    const main = async (state, action) => {
-        switch (action.type) {
-                // handle if subscribe is found in action.type
-            case 'subscribe':
-                const response = await axios({
-                    method: "POST", url: "https://ngo-application.herokuapp.com/api/newsletter", data: action.payload
-                });
-                console.log(response);
-                // return the default state
-            default:
-                return state;
-        }
-             };
-
         //state for person email address
     const [email, setEmail] = useState({ email: '' }); // state definition
-
-        // handle the action of suscribe and contain backend response
-    const [state, dispatch] = useReducer(main, initialState);
-
 
         //handleChange input value
     const handleChange = (e) => {
@@ -47,11 +16,11 @@ export const Footer = () => {
     }
 
         //handleSubmit action
-    const handleSubmit = () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         if (email) {
-            // dispatch an action to the reducer function
-            dispatch({ type: 'subscribe', payload: email });
-            setEmail({});// clear the state value of the email
+            const mailed_data = await axios({ method: "POST", url: 'http://localhost:5000/api/newsletter', data: email });
+            console.log(mailed_data);
         }
     }
 
@@ -62,7 +31,7 @@ export const Footer = () => {
                 <Header>Subscribe to Our Newsletter</Header>
                 <FormArea>
                     <SubscribeInput type="email" onChange={handleChange} name="email"/>
-                    <Button type="button" onClick={() => handleSubmit()}>Subscibe</Button>
+                    <Button type="submit" onClick={handleSubmit}>Subscibe</Button>
                 </FormArea>
             </Section1>
 
