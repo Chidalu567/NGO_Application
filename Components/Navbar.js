@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import logoPic from '../public/images/Logo.png';
-import axios from 'axios';
+import useSWR from 'swr';
 import { useEffect, useState } from 'react';
 // fontawesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +12,6 @@ import styled,{keyframes} from 'styled-components';
 // Ant design
 import { Drawer, Modal, Input, Tooltip,InputNumber,Radio } from 'antd';
 import {UserOutlined,InfoCircleOutlined} from '@ant-design/icons'
-
 
 
 

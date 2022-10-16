@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useState, useReducer } from 'react';
 import axios from 'axios';
-
+import {message} from 'antd'
 
 export const Footer = () => {
 
@@ -20,7 +20,9 @@ export const Footer = () => {
         e.preventDefault();
         if (email) {
             const mailed_data = await axios({ method: "POST", url: 'http://localhost:5000/api/newsletter', data: email });
-            console.log(mailed_data);
+            message.loading(mailed_data.data.loading, 2.5)
+                .then(() => message.success(mailed_data.data.success))
+                .then(() => message.info(mailed_data.data.info));
         }
     }
 
