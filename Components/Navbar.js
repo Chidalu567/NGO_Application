@@ -89,8 +89,8 @@ export const Navbar = () => {
                 <Input placeholder="Enter username" name="name" style={{ marginBottom: "20px", height: "50px" }} prefix={<UserOutlined className="site-form-item-icon" />} suffix={<Tooltip title="Username"><InfoCircleOutlined /></Tooltip>} onChange={handleChange} />
                 <Input placeholder="Enter email" name="email" style={{ marginBottom: "20px", height: "50px" }} suffix={<Tooltip title="Email address"><InfoCircleOutlined /></Tooltip>} onChange={handleChange} />
                 <Radio.Group style={{marginBottom:"20px"}} buttonStyle="solid" onChange={handleRadioChange}>
-                    <Radio.Button value="AUS">AUS</Radio.Button>
-                    <Radio.Button value="NGN">NIG</Radio.Button>
+                    <Radio.Button value="AUS">AUD</Radio.Button>
+                    <Radio.Button value="NGN">NGN</Radio.Button>
                 </Radio.Group><br />
                 <MyInput type="number" name="amount" onChange={handleChange} placeholder="Enter amount"/>
                 <MyInput type="text" name="phone" onChange={handleChange} placeholder="Enter phonenumber"/>
