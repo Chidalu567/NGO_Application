@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import logoPic from '../public/images/Logo.png';
-import { useState } from 'react';
+import axios from 'axios'
+import { useEffect, useState } from 'react';
 // fontawesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping, faBars } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +10,112 @@ import { faBagShopping, faBars } from '@fortawesome/free-solid-svg-icons';
 import styled,{keyframes} from 'styled-components';
 
 // Ant design
-import { Drawer, Button} from 'antd';
+import { Drawer, Modal, Input, Tooltip,InputNumber,Radio } from 'antd';
+import {UserOutlined,InfoCircleOutlined} from '@ant-design/icons'
+
+
+
+export const Navbar = () => {
+
+    const [drawerProps, setDrawerProps] = useState({visible:false,placement:'bottom'}); // initilize the state variable and handler
+
+    // modal open and close state
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // client info state
+    const [person,setPerson] = useState({name:'',email:'',country:'',amount:'',phone:''});
+
+    const handleClick = () => {
+        // state handler call to update the state
+        setDrawerProps({ ...drawerProps, visible: true });
+    }
+
+    const handleCloseDrawer = () => {
+        // state handler call to update the state
+        setDrawerProps({ ...drawerProps, visible: false });
+    }
+
+    const handleDonateButtonClick = () => {
+        // set it to the opppsite
+        setIsModalOpen(true);
+    }
+
+    const handleChange = (e) => {
+        const key = e.target.name;
+        const value = e.target.value;
+
+        // update the state dynamically
+        setPerson({ ...person, [key]: value });
+    }
+
+    const handleRadioChange = (e) => {
+        setPerson({ ...person, country: e.target.value });
+    }
+
+    const handleDonateClick = async() => {
+        if (person.amount&&person.name&&person.country&&person.phone) {
+            const response = await axios({
+                url: ' https://sporg.herokuapp.com/api/create-checkout-session',
+                method: "post",
+                data: {
+                    name: person.name,
+                    email: person.email,
+                    phone: person.phone,
+                    country: person.country,
+                    amount: person.amount,
+                }
+            });
+            if (response.data) {
+                const link = response.data.link;
+                window.location.href = link;
+            }
+        }
+    }
+
+    return (
+        <NavBar>
+            <NavLogo>
+                <Image src={logoPic} height="90px" width="100px" alt=""/>
+            </NavLogo>
+
+            <NavContainer>
+                <NavItems>Home</NavItems>
+                <NavItems>About</NavItems>
+                <NavItems>Causes</NavItems>
+                <NavItems>Staff</NavItems>
+            </NavContainer>
+
+            <Modal title="Detail section" visible={isModalOpen} onOk={()=>setIsModalOpen(false)} onCancel={()=>setIsModalOpen(false)}>
+                <Input placeholder="Enter username" name="name" style={{ marginBottom: "20px", height: "50px" }} prefix={<UserOutlined className="site-form-item-icon" />} suffix={<Tooltip title="Username"><InfoCircleOutlined /></Tooltip>} onChange={handleChange} />
+                <Input placeholder="Enter email" name="email" style={{ marginBottom: "20px", height: "50px" }} suffix={<Tooltip title="Email address"><InfoCircleOutlined /></Tooltip>} onChange={handleChange} />
+                <Radio.Group style={{marginBottom:"20px"}} buttonStyle="solid" onChange={handleRadioChange}>
+                    <Radio.Button value="AUS">AUS</Radio.Button>
+                    <Radio.Button value="NGN">NIG</Radio.Button>
+                </Radio.Group><br />
+                <MyInput type="number" name="amount" onChange={handleChange} placeholder="Enter amount"/>
+                <MyInput type="text" name="phone" onChange={handleChange} placeholder="Enter phonenumber"/>
+                <DonateButton style={{display:"block",marginLeft:"0px"}} onClick={handleDonateClick}>Donate</DonateButton>
+            </Modal>
+
+
+            <DonateSection>
+                <FontAwesomeIcon icon={faBagShopping} style={{ color: 'white', height: "30px" }} />
+                <DonateButton type="submit" onClick={()=>handleDonateButtonClick()}>Donate</DonateButton>
+            </DonateSection>
+
+            <BurgerButton onClick={()=>handleClick()}>
+                <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "40px" }} />
+            </BurgerButton>
+
+            <Drawer visible={drawerProps.visible} onClose={() => handleCloseDrawer()} placement={drawerProps.placement} key={drawerProps.placement} maskClosable={ true} drawerStyle={{backgroundColor:'#262F36',color:'white'}} headerStyle={{backgroundColor:'white',padding:"20px"}} >
+                <div>Home</div>
+                <div>About</div>
+                <div>Staff</div>
+                <DrawerDButton type="button">Donate Now</DrawerDButton>
+            </Drawer>
+        </NavBar>
+    )
+}
 
 
 // All styled components section
@@ -121,47 +227,16 @@ const DrawerDButton = styled(DonateButton)`
     animation-timing-function:ease-in-out;
 `;
 
-export const Navbar = () => {
 
-    const [drawerProps, setDrawerProps] = useState({visible:false,placement:'bottom'}); // initilize the state variable and handler
 
-    const handleClick = () => {
-        // state handler call to update the state
-        setDrawerProps({ ...drawerProps, visible: true });
+const MyInput = styled.input`
+    display:block;
+    width:100%;
+    height:50px;
+    border:1px solid lightgray;
+    margin-bottom:20px;
+    padding:5px;
+    &:hover{
+        border:1px solid lightblue;
     }
-
-    const handleCloseDrawer = () => {
-        // state handler call to update the state
-        setDrawerProps({ ...drawerProps, visible: false });
-    }
-
-    return (
-        <NavBar>
-            <NavLogo>
-                <Image src={logoPic} height="90px" width="100px" alt=""/>
-            </NavLogo>
-
-            <NavContainer>
-                <NavItems>Home</NavItems>
-                <NavItems>About</NavItems>
-                <NavItems>Causes</NavItems>
-                <NavItems>Staff</NavItems>
-            </NavContainer>
-
-            <DonateSection>
-                <FontAwesomeIcon icon={faBagShopping} style={{ color: 'white',height:"30px"}}/>
-                <DonateButton type="button">Donate</DonateButton>
-            </DonateSection>
-            <BurgerButton onClick={()=>handleClick()}>
-                <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "40px" }} />
-            </BurgerButton>
-
-            <Drawer visible={drawerProps.visible} onClose={() => handleCloseDrawer()} placement={drawerProps.placement} key={drawerProps.placement} maskClosable={ true} drawerStyle={{backgroundColor:'#262F36',color:'white'}} headerStyle={{backgroundColor:'white',padding:"20px"}} >
-                <div>Home</div>
-                <div>About</div>
-                <div>Staff</div>
-                <DrawerDButton type="button">Donate Now</DrawerDButton>
-            </Drawer>
-        </NavBar>
-    )
-}
+`;
