@@ -111,7 +111,7 @@ export const Navbar = () => {
                 <div>Home</div>
                 <div>About</div>
                 <div>Staff</div>
-                <DrawerDButton type="button">Donate Now</DrawerDButton>
+                <DrawerDButton type="button" onClick={()=>handleDonateButtonClick()}>Donate Now</DrawerDButton>
             </Drawer>
         </NavBar>
     )
