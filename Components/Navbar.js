@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import logoPic from '../public/images/Logo.png';
-import useSWR from 'swr';
+import axios from 'axios'
 import { useEffect, useState } from 'react';
 // fontawesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
