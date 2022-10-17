@@ -19,7 +19,7 @@ export const Footer = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (email) {
-            const mailed_data = await axios({ method: "POST", url: ' https://sirphiliporganization.herokuapp.com/api/newsletter', data: email });
+            const mailed_data = await axios({ method: "POST", url: ' https://sporg.herokuapp.com/api/newsletter', data: email });
             message.loading(mailed_data.data.loading, 2.5)
                 .then(() => message.success(mailed_data.data.success))
                 .then(() => message.info(mailed_data.data.info));

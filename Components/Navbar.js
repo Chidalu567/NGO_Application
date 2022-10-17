@@ -55,7 +55,7 @@ export const Navbar = () => {
     const handleDonateClick = async() => {
         if (person.amount&&person.name&&person.country&&person.phone) {
             const response = await axios({
-                url: ' https://sirphiliporganization.herokuapp.com/api/create-checkout-session',
+                url: ' https://sporg.herokuapp.com/api/create-checkout-session',
                 method: "post",
                 data: {
                     name: person.name,
