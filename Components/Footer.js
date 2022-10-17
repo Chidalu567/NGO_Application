@@ -51,8 +51,8 @@ export const Footer = () => {
 
                 <ContactContainer>
                     <ContactHeader>Contacts</ContactHeader>
-                    <ContactText>+234 806 372 5215</ContactText>
                     <ContactText>+61 423 278 457</ContactText>
+                    <ContactText>+234 813 012 5850</ContactText>
                     <ContactText>+234 703 852 2644</ContactText>
                 </ContactContainer>
             </Section2>

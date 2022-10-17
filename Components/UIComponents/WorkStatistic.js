@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
+// request libary
+import axios from 'axios';
+
 // Pictures
 import clothing from '../../public/images/workstats/clothing.jpeg';
 import school from '../../public/images/workstats/school.jpg';
 import food from '../../public/images/workstats/food.jpg';
 
+
 //Antdesign
-import { Progress,Carousel } from 'antd';
+import { Progress, Carousel } from 'antd';
 
 
 //UIComponents
@@ -54,7 +58,20 @@ const DonateButton = styled.button`
     filter:drop-shadow(0px 3px 4px rgba(0,0,0.25));
 `;
 
+const MyInput = styled.input`
+    display:block;
+    width:100%;
+    height:50px;
+    border:1px solid lightgray;
+    margin-bottom:20px;
+    padding:5px;
+    &:hover{
+        border:1px solid lightblue;
+    }
+`;
+
 export const WorkStatistic = () => {
+
     return (
         <Container>
             <Content>
@@ -63,9 +80,10 @@ export const WorkStatistic = () => {
                     <Image src={school} layout="responsive" priority="true" height={800} alt=""/>
                     <Image src={food} layout="responsive" priority="true" alt=""/>
                 </Carousel>
+
                 <Text>Estimated Break Even</Text>
-                <Progress type="dashboard" percent={88} status="active" size="large" style={{alignSelf:"center",marginBottom:"10px"}}/>
-                <DonateButton type="button">Donate Now</DonateButton>
+
+                <Progress type="dashboard" percent={88} status="active" size="large" style={{ alignSelf: "center", marginBottom: "10px" }} />
             </Content>
         </Container>
     )

@@ -4,10 +4,57 @@ import Image from 'next/image';
 import FirstSectionImage from '../../public/images/childSmiling.jpg'
 /////////////////////////////// Ant design Components
 import { Progress } from 'antd';
-
+import { Modal, Input, Tooltip,Radio } from 'antd';
+import {UserOutlined,InfoCircleOutlined} from '@ant-design/icons'
+import { useState } from 'react';
 
 
 export const FirstSection = () => {
+        // modal open and close state
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+        // client info state
+    const [person,setPerson] = useState({name:'',email:'',country:'',amount:'',phone:''});
+
+    const handleDonateButtonClick = () => {
+        console.log("Button working")
+        // set it to the opppsite
+        setIsModalOpen(true);
+    }
+
+
+    const handleChange = (e) => {
+        const key = e.target.name;
+        const value = e.target.value;
+
+        // update the state dynamically
+        setPerson({ ...person, [key]: value });
+    }
+
+    const handleRadioChange = (e) => {
+        setPerson({ ...person, country: e.target.value });
+    }
+
+    const handleDonateClick = async() => {
+        if (person.amount&&person.name&&person.country&&person.phone) {
+            const response = await axios({
+                url: ' https://sporg.herokuapp.com/api/create-checkout-session',
+                method: "post",
+                data: {
+                    name: person.name,
+                    email: person.email,
+                    phone: person.phone,
+                    country: person.country,
+                    amount: person.amount,
+                }
+            });
+            if (response.data) {
+                const link = response.data.link;
+                window.location.href = link;
+            }
+        }
+    }
+
     return (
         <Section1>
             <Text1>Sir Aguwuncha Philip is a non-governmental organization which <br/><OrangeText>provides help to the needy.</OrangeText></Text1>
@@ -20,13 +67,24 @@ export const FirstSection = () => {
                 <ReadMore type="button">Read more</ReadMore>
             </FirstArticle>
 
+            <Modal title="Detail section" visible={isModalOpen} onOk={()=>setIsModalOpen(false)} onCancel={()=>setIsModalOpen(false)}>
+                <Input placeholder="Enter username" name="name" style={{ marginBottom: "20px", height: "50px" }} prefix={<UserOutlined className="site-form-item-icon" />} suffix={<Tooltip title="Username"><InfoCircleOutlined /></Tooltip>} onChange={handleChange} />
+                <Input placeholder="Enter email" name="email" style={{ marginBottom: "20px", height: "50px" }} suffix={<Tooltip title="Email address"><InfoCircleOutlined /></Tooltip>} onChange={handleChange} />
+                <Radio.Group style={{marginBottom:"20px"}} buttonStyle="solid" onChange={handleRadioChange}>
+                    <Radio.Button value="AUS">AUD</Radio.Button>
+                    <Radio.Button value="NGN">NGN</Radio.Button>
+                </Radio.Group><br />
+                <MyInput type="number" name="amount" onChange={handleChange} placeholder="Enter amount"/>
+                <MyInput type="text" name="phone" onChange={handleChange} placeholder="Enter phonenumber"/>
+                <DonateButton style={{display:"block",marginLeft:"0px"}} onClick={handleDonateClick}>Donate</DonateButton>
+            </Modal>
+
             <SecondArticle>
                 <Image src={FirstSectionImage} layout="responsive" priority="true" alt=""/>
                 <Statistic>
                     <Stats>Raised : $25000 / $30000</Stats>
                     <Progress type="circle" strokeColor={{ '0%': '#FF5E14', '100%': 'gray' }} percent={50} style={{marginLeft:"30%"}}/>
-                    <DonateButton type="button">Donate Now</DonateButton>
-                </Statistic>
+                    <DonateButton type="button" onClick={()=>handleDonateButtonClick()}>Donate Now</DonateButton>                </Statistic>
             </SecondArticle>
 
         </Section1>
@@ -145,4 +203,16 @@ const Statistic = styled.div`
     margin-right:10%;
     height:300px;
     box-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
+`;
+
+const MyInput = styled.input`
+    display:block;
+    width:100%;
+    height:50px;
+    border:1px solid lightgray;
+    margin-bottom:20px;
+    padding:5px;
+    &:hover{
+        border:1px solid lightblue;
+    }
 `;
