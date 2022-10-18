@@ -131,7 +131,7 @@ export const TimeLine = () => {
                     <Timeline.Item>
                         <TimelineItem>
                             <Card hoverable cover={<Image src={image1} priority="true" layout="responsive" />} style={{width:250}}>
-                                <Meta title="Helping the Elderly" description="Assiting the elderly is an important role in humanity. Sir Aguwuncha Philip Organization aims to fufil this role" />
+                                <Meta title="Helping the Elderly" description="Assiting the elderly is an important role in humanity. Sir Philip Aguwuncha Organization aims to fufil this role" />
                             </Card>
                         </TimelineItem>
                     </Timeline.Item>
@@ -163,7 +163,7 @@ export const TimeLine = () => {
                     <Timeline.Item>
                         <TimelineItem>
                             <Card hoverable cover={<Image src={image5} priority="true" layout="responsive" />} style={{width:250}}>
-                                <Meta title="Provisions" description="Why are we NGO if we can't assist financially. Sir Aguwuncha Philip Organization aids provision to the less privileged.
+                                <Meta title="Provisions" description="Why are we NGO if we can't assist financially. Sir Philip Aguwuncha Organization aids provision to the less privileged.
                                 Equally living is important in humanity" />
                             </Card>
                         </TimelineItem>
@@ -196,7 +196,7 @@ export const TimeLine = () => {
                     <Timeline.Item>
                         <TimelineItem>
                             <Card hoverable cover={<Image src={image9} priority="true" layout="responsive" />} style={{width:250}}>
-                                <Meta title="Looking Forward" description="Sir Aguwuncha Philip Organization is aimed at helping people both locally and Internationally." />
+                                <Meta title="Looking Forward" description="Sir Philip Aguwuncha Organization is aimed at helping people both locally and Internationally." />
                             </Card>
                         </TimelineItem>
                     </Timeline.Item>
