@@ -73,19 +73,19 @@ export const Staffs = () => {
                 <SwiperSlide>
                     <Image src={okechukwuImage} priority={true} />
                     <Title>CEO</Title>
-                    <Description>Mr Philip Aguwuncha is the chief executive officer of sir philip ngo organization.</Description>
+                    <Description>Mr Philip Aguwuncha is the chief executive officer of sir philip aguwuncha ngo organization.</Description>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <Image src={conciliaImage} priority={true} />
                     <Title>Staff Administrator</Title>
-                    <Description>Concilia Okechukwu is the staff administrator of sir philip aguwncha ngo organization.</Description>
+                    <Description>Concilia Okechukwu is the staff administrator of sir philip aguwuncha ngo organization.</Description>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <Image src={ebukaImage} priority={true} />
                     <Title>Event Staff</Title>
-                    <Description>Ebuka Okoye is the event staff lead of sir philip ngo organization.</Description>
+                    <Description>Ebuka Okoye is the event staff lead of sir philip aguwuncha ngo organization.</Description>
                 </SwiperSlide>
             </Swiper>
         </Container>

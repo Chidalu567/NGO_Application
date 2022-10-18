@@ -57,7 +57,7 @@ export const FirstSection = () => {
 
     return (
         <Section1>
-            <Text1>Sir Aguwuncha Philip is a non-governmental organization which <br/><OrangeText>provides help to the needy.</OrangeText></Text1>
+            <Text1>Sir Philip Aguwuncha is a non-governmental organization which <br/><OrangeText>provides help to the needy.</OrangeText></Text1>
 
             <FirstArticle>
                 <Text2><ColorQuote>&ldquo;`</ColorQuote>Good works is giving to the poor and the helpless, but divine works
