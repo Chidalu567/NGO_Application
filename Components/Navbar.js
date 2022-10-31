@@ -83,7 +83,6 @@ export const Navbar = () => {
                 <NavItems>Gallery</NavItems>
                 <NavItems>FindmyId</NavItems>
                 <NavItems>UpcomingEvents</NavItems>
-                <NavItems>About</NavItems>
             </NavContainer>
 
             <Modal title="Detail section" visible={isModalOpen} onOk={()=>setIsModalOpen(false)} onCancel={()=>setIsModalOpen(false)}>
@@ -113,7 +112,6 @@ export const Navbar = () => {
                 <div>Gallery</div>
                 <div>FindmyId</div>
                 <div>UpcomingEvents</div>
-                <div>About</div>
                 <DrawerDButton type="button" onClick={()=>handleDonateButtonClick()}>Donate Now</DrawerDButton>
             </Drawer>
         </NavBar>
