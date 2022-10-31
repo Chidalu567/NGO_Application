@@ -80,9 +80,9 @@ export const Navbar = () => {
 
             <NavContainer>
                 <NavItems>Home</NavItems>
-                <NavItems>About</NavItems>
-                <NavItems>Causes</NavItems>
-                <NavItems>Staff</NavItems>
+                <NavItems>Gallery</NavItems>
+                <NavItems>FindmyId</NavItems>
+                <NavItems>UpcomingEvents</NavItems>
             </NavContainer>
 
             <Modal title="Detail section" visible={isModalOpen} onOk={()=>setIsModalOpen(false)} onCancel={()=>setIsModalOpen(false)}>
@@ -109,8 +109,9 @@ export const Navbar = () => {
 
             <Drawer visible={drawerProps.visible} onClose={() => handleCloseDrawer()} placement={drawerProps.placement} key={drawerProps.placement} maskClosable={ true} drawerStyle={{backgroundColor:'#262F36',color:'white'}} headerStyle={{backgroundColor:'white',padding:"20px"}} >
                 <div>Home</div>
-                <div>About</div>
-                <div>Staff</div>
+                <div>Gallery</div>
+                <div>FindmyId</div>
+                <div>UpcomingEvents</div>
                 <DrawerDButton type="button" onClick={()=>handleDonateButtonClick()}>Donate Now</DrawerDButton>
             </Drawer>
         </NavBar>
