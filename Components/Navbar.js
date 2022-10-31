@@ -82,7 +82,6 @@ export const Navbar = () => {
                 <NavItems>Home</NavItems>
                 <NavItems>Gallery</NavItems>
                 <NavItems>FindmyId</NavItems>
-                <NavItems>PastEvents</NavItems>
                 <NavItems>UpcomingEvents</NavItems>
                 <NavItems>About</NavItems>
             </NavContainer>
@@ -113,7 +112,6 @@ export const Navbar = () => {
                 <div>Home</div>
                 <div>Gallery</div>
                 <div>FindmyId</div>
-                <div>PastEvents</div>
                 <div>UpcomingEvents</div>
                 <div>About</div>
                 <DrawerDButton type="button" onClick={()=>handleDonateButtonClick()}>Donate Now</DrawerDButton>
