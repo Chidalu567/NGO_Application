@@ -845,6 +845,19 @@
     "slice-ansi" "^3.0.0"
     "string-width" "^4.2.0"
 
+"cloudinary-core@^2.13.0":
+  "integrity" "sha512-Nt0Q5I2FtenmJghtC4YZ3MZZbGg1wLm84SsxcuVwZ83OyJqG9CNIGp86CiI6iDv3QobaqBUpOT7vg+HqY5HxEA=="
+  "resolved" "https://registry.npmjs.org/cloudinary-core/-/cloudinary-core-2.13.0.tgz"
+  "version" "2.13.0"
+
+"cloudinary-react@^1.8.1":
+  "integrity" "sha512-90LHbUPfB8Uj5tKY08+ladN8ONyfak8zjnlAgVc39vlxKCx3b9G0/+I5C1QQGDwBRqHKzxyXterfugbWUrCQhA=="
+  "resolved" "https://registry.npmjs.org/cloudinary-react/-/cloudinary-react-1.8.1.tgz"
+  "version" "1.8.1"
+  dependencies:
+    "cloudinary-core" "^2.13.0"
+    "prop-types" "^15.8.1"
+
 "color-convert@^1.9.0":
   "integrity" "sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg=="
   "resolved" "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz"
@@ -2097,7 +2110,7 @@
   "resolved" "https://registry.npmjs.org/lodash.once/-/lodash.once-4.1.1.tgz"
   "version" "4.1.1"
 
-"lodash@^4.17.11", "lodash@^4.17.21":
+"lodash@^4.17.11", "lodash@^4.17.21", "lodash@>=4.0":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -2913,7 +2926,7 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
-"react@*", "react@^16.11.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.0.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.0.0", "react@>=16.11.0", "react@>=16.9.0", "react@>=16.x", "react@18.0.0":
+"react@*", "react@^16.11.0 || ^17.0.0 || ^18.0.0", "react@^16.3.3 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.0.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.0.0", "react@>=16.11.0", "react@>=16.9.0", "react@>=16.x", "react@18.0.0":
   "integrity" "sha512-x+VL6wbT4JRVPm7EGxXhZ8w8LTROaxPXOqhlGyVSrv0sB1jkyFGgXxJ8LVoPRLvPR6/CIZGFmfzqUa2NYeMr2A=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.0.0.tgz"
   "version" "18.0.0"
