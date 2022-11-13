@@ -109,8 +109,8 @@ export const Navbar = () => {
             </BurgerButton>
 
             <Drawer visible={drawerProps.visible} onClose={() => handleCloseDrawer()} placement={drawerProps.placement} key={drawerProps.placement} maskClosable={ true} drawerStyle={{backgroundColor:'#262F36',color:'white'}} headerStyle={{backgroundColor:'white',padding:"20px"}} >
-                <div>Home</div>
-                <div>Gallery</div>
+                <div><Link href="/">Home</Link></div>
+                <div><Link href="/gallery">Gallery</Link></div>
                 <div>FindmyId</div>
                 <div>UpcomingEvents</div>
                 <DrawerDButton type="button" onClick={()=>handleDonateButtonClick()}>Donate Now</DrawerDButton>
