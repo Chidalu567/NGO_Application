@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import logoPic from '../public/images/Logo.png';
 import axios from 'axios'
 import { useEffect, useState } from 'react';
@@ -79,8 +80,8 @@ export const Navbar = () => {
             </NavLogo>
 
             <NavContainer>
-                <NavItems>Home</NavItems>
-                <NavItems>Gallery</NavItems>
+                <NavItems><Link href="/">Home</Link></NavItems>
+                <NavItems><Link href="/gallery">Gallery</Link></NavItems>
                 <NavItems>FindmyId</NavItems>
                 <NavItems>UpcomingEvents</NavItems>
             </NavContainer>
